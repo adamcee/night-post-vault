@@ -1,27 +1,30 @@
 ---
 name: sync-skills
-description: "Synchronizes vault-based skills (.claude/skills/) with the CLI environment. Use this whenever the user asks to manage, link, or check for new skills."
+description: "Makes the vault's skills in .claude/skills/ available to other agent CLIs, such as Antigravity CLI and Gemini CLI. Use when the user asks to manage, link, or check skills, or when vault-start finds them missing."
 ---
 
 # Sync Skills
 
-Ensures that CLI environments (like Gemini CLI) maintain feature parity by linking new skills.
+The vault keeps one copy of its skills in `.claude/skills/`. Other agent CLIs look elsewhere, so link them to that folder instead of copying.
 
-## 🛠️ Tooling & Operations
+## Antigravity CLI (`agy`)
 
-### 1. Check Discovered Skills
-List the skills currently recognized by the environment (e.g., `gemini skills list`).
+Antigravity reads workspace skills from `.agents/skills/`. From the vault root:
 
-### 2. Scan Vault Skills
-List the skill directories in the vault:
 ```bash
-ls -1 .claude/skills/
+mkdir -p .agents
+ln -s ../.claude/skills .agents/skills
 ```
 
-### 3. Link Missing Skills
-If there is a directory in `.claude/skills/` that does not appear in the installed skills list, link it immediately. 
-Example for Gemini CLI:
+Check with `ls .agents/skills/`: it should list `vault-start`, `vault-links`, `vault-maintenance`, `prompt-architect`, and `sync-skills`. On Windows, where symlinks may be unavailable, copy the folder instead and rerun this skill after skills change.
+
+## Gemini CLI (paid API keys)
+
+Gemini CLI links skills one at a time:
+
 ```bash
-gemini skills link .claude/skills/example-skill
+gemini skills list
+gemini skills link .claude/skills/<skill-name>
 ```
-*(Auto-accept prompts if necessary, e.g., `yes | gemini skills link...`)*
+
+Link every folder in `.claude/skills/` that `gemini skills list` doesn't show.

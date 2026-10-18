@@ -15,11 +15,11 @@ Read `AGENTS.md` in full with your environment's read tool (`read_file` or equiv
 
 ## Step 2: Read Your Tool's Pointer File
 
-Read the pointer file for your tool: `CLAUDE.md` (Claude Code, Claude Desktop), `GEMINI.md` (Gemini CLI), `.cursorrules` (Cursor), or `.windsurfrules` (Windsurf). Pointer files hold only tool mechanics, such as MCP tool names, write-size limits, and skill locations, and no project content.
+Read the pointer file for your tool: `CLAUDE.md` (Claude Code, Claude Desktop), `GEMINI.md` (Antigravity CLI, Gemini CLI), `.cursorrules` (Cursor), or `.windsurfrules` (Windsurf). Pointer files hold only tool mechanics, such as MCP tool names, write-size limits, and skill locations, and no project content.
 
-## Step 2.5 (Gemini CLI Only): Sync Skills
+## Step 2.5 (Antigravity or Gemini CLI Only): Sync Skills
 
-Compare the folders in `.claude/skills/` with the skills Gemini CLI has linked (`gemini skills list`). If any are missing, run the `sync-skills` skill before continuing so Gemini has the same skills as Claude.
+Antigravity CLI reads skills from `.agents/skills/`; Gemini CLI uses `gemini skills list`. If either is missing a folder from `.claude/skills/`, run the `sync-skills` skill before continuing.
 
 ## Step 3: Find What Changed Since the Last Session
 

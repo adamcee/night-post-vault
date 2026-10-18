@@ -5,7 +5,7 @@ tags: [vault-guide, index]
 ---
 # Vault Guide
 
-How the vault works and why: the design rationale, the canonical protocol pages, and the style guides for all vault writing. When a protocol summary in [[AGENTS]] differs from its page here, the page wins.
+These pages explain how the vault works and why: the design rationale, the canonical protocol pages, and the style guides for all vault writing. When a protocol summary in [[AGENTS]] differs from its page here, the page wins.
 
 - [[vault-guide/vault-design-philosophy|vault-design-philosophy]]: why the vault is structured this way, with a summary table of every protocol.
 
