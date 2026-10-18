@@ -1,0 +1,22 @@
+# OS and editor
+.DS_Store
+Thumbs.db
+
+# Obsidian per-device state
+.obsidian/workspace*.json
+.obsidian/cache
+.smart-env/
+
+# Secrets
+.env
+*.pem
+*.token
+secrets/
+
+# Build output
+__pycache__/
+*.pyc
+
+# Published site build
+.site/.quartz/
+public/

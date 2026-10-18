@@ -1,0 +1,5 @@
+# Windsurf Instructions
+
+Read `AGENTS.md` before answering or acting in a new session. It is the single source of truth for this vault, and its instructions override anything here.
+
+Add Windsurf-specific rules below this line. Project decisions and constraints belong in `AGENTS.md`.
